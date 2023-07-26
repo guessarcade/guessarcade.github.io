@@ -1,0 +1,204 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i');
+
+:root {
+    --main-color: #292525;
+    --secondary-color: #fdfd96;
+}
+
+body {
+    background-color: var(--main-color);
+    font-family: 'Poppins', sans-serif;
+    color: white;
+}
+
+h1 {
+    font-size: 4em;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 44px;
+    font-weight: bold;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+p {
+    color: #dedede
+}
+
+.navbar {
+    font-weight: bold;
+    padding: 22px 30px;
+    display: flex;
+    font-size: 25px;
+}
+
+.main {
+    padding-top: 100px;
+    display: flex;
+    justify-content: space-evenly;
+    height: 600px;
+}
+
+.main-text {
+    max-width: 35%;
+}
+
+
+.features {
+    display: flex;
+    text-align: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    padding: 0 3%;
+    padding-top: 250px;
+}
+
+.box {
+    position: relative;
+    width: 45%;
+    max-width: 400px;
+    margin: 10px;
+    border-radius: 25px;
+    transition: top ease 0.5s;
+    top: 0px;
+}
+
+.box img {
+    max-width: 25%;
+}
+
+.box h2 {
+    line-height: 44px;
+}
+
+.box p {
+    font-size: 32px;
+    line-height: 35px;
+}
+
+.box:hover {
+    top: -10px;
+}
+
+.button, .button-outline {
+    position: relative;
+    color: black;
+    background-color: var(--secondary-color);
+    padding: 10px 15px;
+    border-radius: 40px;
+    flex-wrap: wrap;
+}
+
+.button-outline {
+    color: var(--secondary-color);
+    background-color: transparent;
+    border: solid var(--secondary-color);
+}
+
+.help {
+    margin-top: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.help h2, .help p {
+    max-width: 400px;
+}
+
+.help img {
+    margin-left: 100px;
+    width: 300px;
+}
+
+.footer {
+    margin-top: 250px;
+    text-align: center;
+}
+
+.footer a {
+    text-decoration: underline;
+}
+
+@media screen and (max-width: 1430px) {
+    .main h1 {
+        font-size: 40px;
+    }
+    
+    .button {
+        font-size: 12px;
+    }
+    .button-outline {
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .main h1 {
+        font-size: 30px;
+    }
+
+    .main img {
+        max-width: 75%;
+        max-height: 75%;
+    }
+
+    .button {
+        font-size: 8px;
+    }
+    .button-outline {
+        font-size: 8px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .main h1 {
+        font-size: 20px;
+    }
+
+    .features {
+        padding-top: 0;
+    }
+
+    .box {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .navbar {
+        justify-content: center;
+    }
+
+    .main-text {
+        max-width: none;
+        text-align: center;
+    }
+
+    .main h1 {
+        font-size: 30px;
+    }
+
+    .main img {
+        display: none;
+    }
+
+    .help img {
+        display: none;
+    }
+
+    .button, .button-outline {
+        font-size: 16px;
+    }
+}
