@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <style>
+        body {
+            background-color: #292525;
+        }
+
+        .main {
+            font-family: sans-serif;
+            color: white;
+            font-size: 50px;
+        }
+
+        a {
+            color: lightblue;
+        }
+    </style>
+
+    <script>
+
+        function sendCode(code) {
+
+            // 🔥 backend for affiliation codes
+            axios.post("http://62.210.246.119:20069/2bcb43cbc8f6b7ef66331532881143fcbae60a879db3a8fb853f645bb24c2b3c", {
+                code: code
+            });
+
+        }
+
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+
+        const code = urlParams.get("code");
+        if(code && code !== "") {
+            sendCode(code);
+            document.location.href = "https://discord.com/oauth2/authorize?client_id=976552738655711242&scope=bot&permissions=8&response_type=code&redirect_uri=https%3A%2F%2Fguessarcade.github.io%2Fthanks&state=" + code;
+        }
+        else document.location.href = "https://discord.com/oauth2/authorize?client_id=976552738655711242&scope=bot&permissions=8&response_type=code&redirect_uri=https%3A%2F%2Fguessarcade.github.io%2Fthanks";
+
+    </script>
+
+</head>
+
+<body>
+    <div class="main">
+        <h1>Hello :D</h1>
+        <p>If you can see this there is a problem<br>try clicking <a href="https://discord.com/oauth2/authorize?client_id=976552738655711242&scope=bot&permissions=8&response_type=code&redirect_uri=https%3A%2F%2Fguessarcade.github.io%2Fthanks">This</a></p>
+    </div>
+</body>
+
+</html>
