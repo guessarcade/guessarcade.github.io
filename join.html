@@ -24,20 +24,13 @@
 
     <script>
 
-        function sendCode(code) {
-
-            // 🔥 backend for affiliation codes
-            $.post("https://62.210.246.119:20069/2bcb43cbc8f6b7ef66331532881143fcbae60a879db3a8fb853f645bb24c2b3c", JSON.stringify({ code: code }), function (response) {}, "json")
-
-        }
-
         const queryString = window.location.search;
         const urlParams = new URLSearchParams(queryString);
 
         const code = urlParams.get("code");
         if(code && code !== "") {
             sendCode(code);
-            document.location.href = "https://discord.com/oauth2/authorize?client_id=976552738655711242&scope=bot&permissions=100352&response_type=code&redirect_uri=https%3A%2F%2Fguessarcade.github.io%2Fthanks&state=" + code;
+            document.location.href = "https://discord.com/oauth2/authorize?client_id=976552738655711242&scope=bot&permissions=100352&response_type=code&redirect_uri=http%3A%2F%2F62.210.246.119%3A20069%2Fguessarcade-partner&state=" + code;
         }
         else document.location.href = "https://discord.com/oauth2/authorize?client_id=976552738655711242&scope=bot&permissions=100352&response_type=code&redirect_uri=https%3A%2F%2Fguessarcade.github.io%2Fthanks";
 
